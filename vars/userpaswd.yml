@@ -1,0 +1,5 @@
+---
+user:
+    - sammy  # this time include "sammy" as UN
+pwd:
+    - larry  # this time include "larry" as P
