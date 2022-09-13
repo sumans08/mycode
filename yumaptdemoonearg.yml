@@ -1,0 +1,18 @@
+---
+- name: Our first play
+  hosts: planetexpress
+  gather_facts: yes # runs by default
+  become: yes
+
+  tasks:
+
+    - name: Install steam locomotive on ALL machines
+      apt:
+        name: sl
+        state: present
+      when: ansible_distribution == "Ubuntu"
+    - name: Install steam locomotive on ALL machines
+      yum:
+          name: sl
+          state: present
+      when: ansible_distribution == "CentOS"
