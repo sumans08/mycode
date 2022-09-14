@@ -1,0 +1,22 @@
+---
+- name: Create a directroty in each machine
+  hosts: looneytunes
+  connection: ssh
+  gather_facts: yes
+  become: yes
+
+  tasks:
+      - name: create a direcory
+        file:
+          path: /tmp/challenge1
+          state: directory
+      - name: Download file
+        ansible.builtin.get_url:
+           url: https://raw.githubusercontent.com/csfeeser/ansible_essentials/main/data/downloadme.txt
+           dest: /tmp/challenge1
+      - name: rename the downloaded file
+        ansible.builtin.replace:
+           path: /tmp/challenge1/downloadme.txt
+           regexp: "PLACEHOLDER"
+           replace: "Chiranjit"
+           backup: yes
