@@ -1,0 +1,89 @@
+<!-- Copyright (C) Microsoft Corporation. All rights reserved. -->
+<!DOCTYPE html>
+<html>
+	<head>
+		<script>
+			performance.mark('code/didStartRenderer');
+		</script>
+		<meta charset="utf-8" />
+
+		<!-- Mobile tweaks -->
+		<meta name="mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-title" content="Code">
+		<link rel="apple-touch-icon" sizes="192x192" href="{{BASE}}/_static/src/browser/media/pwa-icon-192.png" />
+		<link rel="apple-touch-icon" sizes="512x512" href="{{BASE}}/_static/src/browser/media/pwa-icon-512.png" />
+
+		<!-- Disable pinch zooming -->
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
+
+		<!-- Workbench Configuration -->
+		<meta id="vscode-workbench-web-configuration" data-settings="{{WORKBENCH_WEB_CONFIGURATION}}">
+
+		<!-- Workbench Auth Session -->
+		<meta id="vscode-workbench-auth-session" data-settings="{{WORKBENCH_AUTH_SESSION}}">
+
+		<!-- NLS Configuration -->
+		<meta id="vscode-remote-nls-configuration" data-settings="{{NLS_CONFIGURATION}}">
+
+		<!-- Workbench Icon/Manifest/CSS -->
+		<link rel="icon" href="{{BASE}}/_static/src/browser/media/favicon-dark-support.svg" />
+		<link rel="alternate icon" href="{{BASE}}/_static/src/browser/media/favicon.ico" />
+		<link rel="manifest" href="{{VS_BASE}}/manifest.json" crossorigin="use-credentials" />
+		<link data-name="vs/workbench/workbench.web.main" rel="stylesheet" href="{{VS_BASE}}/static/out/vs/workbench/workbench.web.main.css">
+
+	</head>
+
+	<body aria-label="">
+	</body>
+
+	<!-- Startup (do not modify order of script tags!) -->
+	<script src="{{VS_BASE}}/static/out/vs/loader.js"></script>
+	<script src="{{VS_BASE}}/static/out/vs/webPackagePaths.js"></script>
+	<script>
+		let nlsConfig
+		try {
+			nlsConfig = JSON.parse(document.getElementById("vscode-remote-nls-configuration").getAttribute("data-settings"))
+			if (nlsConfig._resolvedLanguagePackCoreLocation) {
+				const bundles = Object.create(null)
+				nlsConfig.loadBundle = (bundle, _language, cb) => {
+					const result = bundles[bundle]
+					if (result) {
+						return cb(undefined, result)
+					}
+					const path = nlsConfig._resolvedLanguagePackCoreLocation + "/" + bundle.replace(/\//g, "!") + ".nls.json"
+					fetch(`{{VS_BASE}}/vscode-remote-resource?path=${encodeURIComponent(path)}`)
+						.then((response) => response.json())
+						.then((json) => {
+							bundles[bundle] = json
+							cb(undefined, json)
+						})
+						.catch(cb)
+				}
+			}
+		} catch (error) { /* Probably fine. */ }
+		Object.keys(self.webPackagePaths).map(function (key, index) {
+			self.webPackagePaths[key] = new URL(
+				`{{VS_BASE}}/static/node_modules/${key}/${self.webPackagePaths[key]}`,
+				window.location,
+			).toString();
+		});
+		require.config({
+			baseUrl: new URL(`{{VS_BASE}}/static/out`, window.location).toString(),
+			recordStats: true,
+			trustedTypesPolicy: window.trustedTypes?.createPolicy('amdLoader', {
+				createScriptURL(value) {
+					return value;
+				}
+			}),
+			paths: self.webPackagePaths,
+			'vs/nls': nlsConfig,
+		});
+	</script>
+	<script>
+		performance.mark('code/willLoadWorkbenchMain');
+	</script>
+	<script src="{{VS_BASE}}/static/out/vs/workbench/workbench.web.main.nls.js"></script>
+	<script src="{{VS_BASE}}/static/out/vs/workbench/workbench.web.main.js"></script>
+	<script src="{{VS_BASE}}/static/out/vs/code/browser/workbench/workbench.js"></script>
+</html>

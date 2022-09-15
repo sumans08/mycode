@@ -1,0 +1,7 @@
+[2022-09-11 03:34:37.149] [remoteagent] [info] Getting Manifest... golang.go
+[2022-09-11 03:34:37.768] [remoteagent] [info] Installing extension: golang.go
+[2022-09-11 03:34:39.106] [remoteagent] [info] Downloaded extension: golang.go /home/student/.local/share/code-server/CachedExtensionVSIXs/golang.go-0.33.1
+[2022-09-11 03:34:39.274] [remoteagent] [info] Extracted extension to /home/student/.local/share/code-server/extensions/.eded7954-4842-4233-8623-683202ce377e: golang.go
+[2022-09-11 03:34:39.289] [remoteagent] [info] Renamed to /home/student/.local/share/code-server/extensions/golang.go-0.33.1
+[2022-09-11 03:34:39.291] [remoteagent] [info] Extracting completed. golang.go
+[2022-09-11 03:34:39.291] [remoteagent] [info] Extension installed successfully: golang.go

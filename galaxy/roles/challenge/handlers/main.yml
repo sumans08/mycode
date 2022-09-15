@@ -1,0 +1,14 @@
+---
+# handlers file for /home/student/galaxy/roles/challenge
+- name: restart_apache
+  service:
+    name: apache2
+    state: restarted
+  listen: restart_webservices
+
+## this is new, restarts MySQL
+- name: restart_mysql
+  service:
+    name: mysql
+    state: restarted
+  listen: restart_webservices

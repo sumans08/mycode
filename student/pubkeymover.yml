@@ -1,0 +1,18 @@
+---
+- name: "Copy Public Keys"
+  hosts: planetexpress,!farnsworth
+  connection: ssh
+  gather_facts: no
+  become: yes
+
+  vars:
+    ansible_ssh_pass: alta3
+
+  tasks:
+    - name: Set authorized key taken from file
+      authorized_key:
+        user: "{{ ansible_user }}"
+        state: present
+        key: "{{ lookup('file', '~/.ssh/id_rsa.pub') }}"
+      tags:
+       - keys

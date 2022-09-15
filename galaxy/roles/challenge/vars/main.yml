@@ -1,0 +1,6 @@
+---
+# vars file for /home/student/galaxy/roles/challenge
+pkgs:
+ - apache2
+ - mariadb-server
+ - mariadb-client

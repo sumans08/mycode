@@ -1,0 +1,19 @@
+{
+    "workbench.colorTheme": "Default Dark+",
+    "diffEditor.ignoreTrimWhitespace": false,
+    "terminal.integrated.automationShell.linux": "",
+    "terminal.integrated.automationShell.windows": "",
+    "terminal.integrated.defaultProfile.linux": "",
+    "terminal.integrated.defaultProfile.windows": "",
+    "terminal.integrated.profiles.linux": {
+        "bash": {
+            "path": "bash"
+        },
+        "tmux": {
+            "path": "tmux",
+            "args": ["new", "-A", "-s", "ttyd"],
+            "icon": "terminal-tmux",
+            "overrideName": "tmux"
+        }
+    }
+}

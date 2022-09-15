@@ -1,0 +1,28 @@
+[2022-09-11 03:34:10.215] [remoteagent] [info] Getting Manifest... ms-python.python
+[2022-09-11 03:34:10.782] [remoteagent] [info] Installing extension: ms-python.python
+[2022-09-11 03:34:11.337] [remoteagent] [info] Getting Manifest... ms-toolsai.jupyter
+[2022-09-11 03:34:12.100] [remoteagent] [info] Getting Manifest... ms-toolsai.jupyter-renderers
+[2022-09-11 03:34:12.545] [remoteagent] [info] Getting Manifest... ms-toolsai.jupyter-keymap
+[2022-09-11 03:34:13.157] [remoteagent] [info] Installing extension: ms-toolsai.jupyter
+[2022-09-11 03:34:13.158] [remoteagent] [info] Installing extension: ms-toolsai.jupyter-renderers
+[2022-09-11 03:34:13.158] [remoteagent] [info] Installing extension: ms-toolsai.jupyter-keymap
+[2022-09-11 03:34:14.019] [remoteagent] [info] Downloaded extension: ms-toolsai.jupyter-keymap /home/student/.local/share/code-server/CachedExtensionVSIXs/ms-toolsai.jupyter-keymap-1.0.0
+[2022-09-11 03:34:14.060] [remoteagent] [info] Extracted extension to /home/student/.local/share/code-server/extensions/.85780e54-6c23-4ae9-8c8f-4e2327a0a1c9: ms-toolsai.jupyter-keymap
+[2022-09-11 03:34:14.066] [remoteagent] [info] Renamed to /home/student/.local/share/code-server/extensions/ms-toolsai.jupyter-keymap-1.0.0
+[2022-09-11 03:34:14.068] [remoteagent] [info] Extracting completed. ms-toolsai.jupyter-keymap
+[2022-09-11 03:34:15.182] [remoteagent] [info] Downloaded extension: ms-toolsai.jupyter-renderers /home/student/.local/share/code-server/CachedExtensionVSIXs/ms-toolsai.jupyter-renderers-1.0.9
+[2022-09-11 03:34:15.537] [remoteagent] [info] Extracted extension to /home/student/.local/share/code-server/extensions/.9436db4b-5bf4-41dd-8457-1dbb2ad8ea9d: ms-toolsai.jupyter-renderers
+[2022-09-11 03:34:15.546] [remoteagent] [info] Renamed to /home/student/.local/share/code-server/extensions/ms-toolsai.jupyter-renderers-1.0.9
+[2022-09-11 03:34:15.547] [remoteagent] [info] Extracting completed. ms-toolsai.jupyter-renderers
+[2022-09-11 03:34:18.955] [remoteagent] [info] Downloaded extension: ms-toolsai.jupyter /home/student/.local/share/code-server/CachedExtensionVSIXs/ms-toolsai.jupyter-2022.3.1000752054
+[2022-09-11 03:34:20.105] [remoteagent] [info] Extracted extension to /home/student/.local/share/code-server/extensions/.ff0d0980-6c85-4968-9107-a348793eaa1b: ms-toolsai.jupyter
+[2022-09-11 03:34:20.158] [remoteagent] [info] Renamed to /home/student/.local/share/code-server/extensions/ms-toolsai.jupyter-2022.3.1000752054
+[2022-09-11 03:34:20.168] [remoteagent] [info] Extracting completed. ms-toolsai.jupyter
+[2022-09-11 03:34:31.177] [remoteagent] [info] Downloaded extension: ms-python.python /home/student/.local/share/code-server/CachedExtensionVSIXs/ms-python.python-2022.4.1
+[2022-09-11 03:34:34.778] [remoteagent] [info] Extracted extension to /home/student/.local/share/code-server/extensions/.07a2eba1-ba34-4ac5-a354-3d7a0d9755b3: ms-python.python
+[2022-09-11 03:34:34.823] [remoteagent] [info] Renamed to /home/student/.local/share/code-server/extensions/ms-python.python-2022.4.1
+[2022-09-11 03:34:34.829] [remoteagent] [info] Extracting completed. ms-python.python
+[2022-09-11 03:34:34.830] [remoteagent] [info] Extension installed successfully: ms-toolsai.jupyter-keymap
+[2022-09-11 03:34:34.830] [remoteagent] [info] Extension installed successfully: ms-toolsai.jupyter-renderers
+[2022-09-11 03:34:34.830] [remoteagent] [info] Extension installed successfully: ms-toolsai.jupyter
+[2022-09-11 03:34:34.830] [remoteagent] [info] Extension installed successfully: ms-python.python

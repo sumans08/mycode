@@ -1,0 +1,23 @@
+---
+- name: Copy environmental var value into a file without use of shell module
+  hosts: planetexpress   # defined in inventory
+  gather_facts: yes
+  connection: ssh
+
+  tasks:
+
+   - name: make a directory
+     file:
+       path: ~/output/
+       state: directory
+
+  # NOT idempotent (will run every time)
+  #- name: use shell module with wildcarding
+  #  shell: echo $HOME >> ~/output/path.txt
+
+  # idempotent solution
+   - name: use copy to avoid using a shell command
+     copy:
+       content: "{{ ansible_env.HOME }}"           # this retrieves env info from gathered facts ("left side" of the shell command)
+       dest: ~/output/path.txt                     # ("right side" of the shell command)
+       force: yes                                  # always overwrite the file if the content is different

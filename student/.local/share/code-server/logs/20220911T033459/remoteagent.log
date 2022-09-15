@@ -1,0 +1,7 @@
+[2022-09-11 03:35:00.315] [remoteagent] [info] Getting Manifest... vscode.json-language-features
+[2022-09-11 03:35:00.733] [remoteagent] [info] Installing extension: vscode.json-language-features
+[2022-09-11 03:35:02.222] [remoteagent] [info] Downloaded extension: vscode.json-language-features /home/student/.local/share/code-server/CachedExtensionVSIXs/vscode.json-language-features-1.62.3
+[2022-09-11 03:35:02.355] [remoteagent] [info] Extracted extension to /home/student/.local/share/code-server/extensions/.03ed0577-bd49-4f5f-a6cd-8d69df3e6c99: vscode.json-language-features
+[2022-09-11 03:35:02.376] [remoteagent] [info] Renamed to /home/student/.local/share/code-server/extensions/vscode.json-language-features-1.62.3
+[2022-09-11 03:35:02.378] [remoteagent] [info] Extracting completed. vscode.json-language-features
+[2022-09-11 03:35:02.396] [remoteagent] [info] Extension installed successfully: vscode.json-language-features
