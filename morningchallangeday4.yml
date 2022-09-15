@@ -7,9 +7,9 @@
 
 
   vars_prompt:
-        - name: "mc_server_link"
-          prompt: "Please pass the URL name here"
-
+        - name: mc_server_link
+          prompt: Please pass the URL name here
+          default: https://launcher.mojang.com/v1/objects/3cf24a8694aca6267883b17d934efacc5e44440d/server.jar
 
   tasks:
 
