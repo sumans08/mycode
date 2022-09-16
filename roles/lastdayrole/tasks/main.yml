@@ -1,0 +1,34 @@
+---
+# tasks file for lastdayrole
+---
+# tasks file for lastdayrole
+- name: get all available subsets
+  na_elementsw_info:
+    hostname: "{{ elementsw_mvip }}"
+    username: "{{ elementsw_username }}"
+    password: "{{ elementsw_password }}"
+    gather_subsets: all
+  register: result
+
+- debug:
+    var: result
+    verbosity: 2
+
+- name: Add node from pending to active cluster
+  tags:
+  - elementsw_add_node
+  na_elementsw_node:
+    hostname: "{{ elementsw_hostname }}"
+    username: "{{ elementsw_username }}"
+    password: "{{ elementsw_password }}"
+    state: present
+    node_id: "{{ node-ids }}"
+
+- name: Add QOS Policy
+  na_elementsw_qos_policy:
+    hostname: "{{ elementsw_hostname }}"
+    username: "{{ elementsw_username }}"
+    password: "{{ elementsw_password }}"
+    state: present
+    name: platinum
+    qos: "{{ policysettings }}"
